@@ -1,0 +1,513 @@
+.feature-section {
+    background-color: #395a7f;
+    height: 130px;
+    margin-bottom: 25px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.featured-article {
+    font-size: 35px;
+    color: #e9ecee;
+}
+
+.featured-article a {
+    color: #a3cae9;
+}
+
+.more-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.more-text {
+    font-size: 35px;
+    color: #e9ecee;
+}
+
+.more-image-container {
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.more-image {
+    width: 80px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.more-image:hover {
+    transform: scale(1.25);
+}
+
+/* Main container for the section */
+.news-section {
+    display: flex; /* Aligns the image and news items horizontally */
+    justify-content: flex-start; /* Aligns the image and news items to the left */
+    align-items: stretch; /* Matches the height of the image and news items */
+    gap: 20px; /* Adds spacing between the image and news items */
+    margin-left: 40px; /* Adds left margin */
+    padding-left: 10px;
+}
+
+/* Image container */
+.news-1-image-container {
+    display: flex; /* Creates a flex container */
+    align-items: center; /* Centers caption vertically */
+    justify-content: center; /* Centers caption horizontally */
+    position: relative; /* Enables positioning of the caption relative to the container */
+    max-width: 714px; /* Adjust the container width */
+    overflow: hidden; /* Prevents the image and caption from overflowing */
+}
+
+.news-1-image {
+    flex: 1; /* Makes the image fill the container's width */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Adds rounded edges to the image */
+}
+
+.news-1-image:hover {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    position: absolute; /* Positions caption inside the container */
+    bottom: 10px; /* Adjust vertical position */
+    left: 50%; /* Horizontally centers caption based on container width */
+    transform: translateX(-50%); /* Ensures the caption is truly centered */
+    color: white; /* Sets text color to white */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 5px 10px; /* Adds spacing around text */
+    font-size: 14px; /* Adjusts text size */
+    border-radius: 4px; /* Smooth edges for background */
+    line-height: 1.5; /* Spacing between lines */
+    z-index: 1;
+}
+
+.news-1-image-container:hover .image-caption {
+    opacity: 1; /* Ensures the caption remains visible during hover */
+}
+
+/* News items container */
+.news-items-container {
+    display: flex;
+    flex-direction: column; /* Stack the marquees vertically */
+    gap: 20px; /* Add spacing between the marquee items */
+    flex-grow: 1; /* Allow the container to take up remaining space */
+}
+
+/* Each news item (arrow and marquee) */
+.news-item {
+    display: flex;
+    align-items: center; /* Aligns the arrow and marquee vertically */
+    gap: 10px; /* Adds spacing between arrow and marquee */
+}
+
+/* Arrow styling */
+.arrow {
+    background-color: #395a7f; /* Arrow background color */
+    color: #ffffff; /* Text color */
+    padding: 10px 20px; /* Adds spacing */
+    border-radius: 8px; /* Rounds edges */
+    font-size: 18px;
+    white-space: nowrap; /* Prevents text from breaking */
+    position: relative; /* Enables positioning for the pseudo-element */
+}
+
+.arrow::after {
+    content: ''; /* Creates a pointer */
+    position: absolute;
+    top: 50%; /* Vertically center the pointer */
+    right: -10px; /* Position the pointer to the right of the arrow */
+    transform: translateY(-50%); /* Center it vertically */
+    border-style: solid; /* Creates the triangle shape */
+    border-width: 10px 0 10px 10px; /* Triangle dimensions */
+    border-color: transparent transparent transparent #395a7f; /* Matches arrow color */
+}
+
+/* Marquee styling */
+.news-marquee {
+    flex: 1;
+    font-size: 18px; /* Text size */
+    color: #e9ecee; /* Text color */
+    background-color: #6e9fc1; /* Bar background */
+    padding: 20px; /* Adds inner spacing */
+    border-radius: 4px; /* Smooth edges */
+    white-space: nowrap; /* Prevents breaking the text */
+    height: 30px; /* Sets the height of the bar */
+    display: flex; /* Ensures vertical alignment */
+    align-items: center; /* Centers text vertically */
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+.last-update {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* Mobile devices (up to 600px wide) */
+@media (max-width: 600px) {
+    .feature-section {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 10px;
+        margin-top: -20px;
+    }
+
+    .featured-article {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        margin-bottom: 0;
+    }
+
+    .more-section {
+        height: 80px;
+        margin-top: -10px;
+        flex-direction: row; /* Stack "More From JJN" section */
+        align-items: center;
+    }
+
+    .more-image-container {
+        width: 70px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .more-image {
+        width: 70px;
+    }
+
+    .more-text {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .news-section {
+        flex-direction: column; /* Stack image and news items */
+        margin: 0; /* Remove left margin */
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+    }
+
+    .news-items-container {
+        margin: 0;
+    }
+
+    .news-item {
+        gap: 10px; /* Reduce spacing between arrow and marquee */
+        padding: 0;
+    }
+
+    .arrow {
+        font-size: 14px; /* Smaller text size */
+        padding: 8px 16px;
+        margin-top: 16px;
+    }
+
+    .news-marquee {
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+
+    .last-update {
+        font-size: 12px;
+    }
+}
+
+/* Tablets (601px to 768px wide) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .feature-section {
+        flex-direction: row; /* Stack elements horizontally */
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 10px;
+        margin-top: -20px;
+    }
+
+    .featured-article {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        margin-bottom: 0;
+    }
+
+    .more-section {
+        height: 80px;
+        margin-top: -10px;
+        flex-direction: row; /* Stack "More From JJN" section */
+        align-items: center;
+    }
+
+    .more-image-container {
+        width: 80px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .more-text {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .news-section {
+        flex-direction: column; /* Stack image and news items */
+        margin: 0; /* Remove left margin */
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+    }
+
+    .news-1-image {
+        margin-left: 35px;
+    }
+
+    .news-items-container {
+        margin: 0;
+    }
+
+    .news-item {
+        gap: 10px; /* Reduce spacing between arrow and marquee */
+        padding: 0;
+    }
+
+    .arrow {
+        font-size: 14px; /* Smaller text size */
+        padding: 8px 16px;
+        margin-top: 16px;
+    }
+
+    .news-marquee {
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+
+    .last-update {
+        font-size: 12px;
+    }
+}
+
+/* Tablets (769px to 836px wide) */
+@media (min-width: 769px) and (max-width: 936px) {
+    .feature-section {
+        flex-direction: row; /* Stack elements horizontally */
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 10px;
+        margin-top: -20px;
+    }
+
+    .featured-article {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        margin-bottom: 0;
+    }
+
+    .more-section {
+        height: 80px;
+        margin-top: -10px;
+        flex-direction: row; /* Stack "More From JJN" section */
+        align-items: center;
+    }
+
+    .more-image-container {
+        width: 80px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .more-text {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .news-section {
+        flex-direction: column; /* Stack image and news items */
+        margin: 0; /* Remove left margin */
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+    }
+
+    .news-1-image-container {
+        margin-left: 45px;
+    }
+
+    .news-items-container {
+        margin: 0;
+    }
+
+    .news-item {
+        gap: 10px; /* Reduce spacing between arrow and marquee */
+        padding: 0;
+    }
+
+    .arrow {
+        font-size: 14px; /* Smaller text size */
+        padding: 8px 16px;
+        margin-top: 16px;
+    }
+
+    .news-marquee {
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+
+    .last-update {
+        font-size: 12px;
+    }
+}
+
+/* Tablets (937px to 1104px wide) */
+@media (min-width: 937px) and (max-width: 1104px) {
+    .feature-section {
+        flex-direction: row; /* Stack elements horizontally */
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 10px;
+        margin-top: -20px;
+    }
+
+    .featured-article {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        margin-bottom: 0;
+    }
+
+    .more-section {
+        height: 80px;
+        margin-top: -10px;
+        flex-direction: row; /* Stack "More From JJN" section */
+        align-items: center;
+    }
+
+    .more-image-container {
+        width: 80px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .more-text {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .news-section {
+        flex-direction: column; /* Stack image and news items */
+        margin: 0; /* Remove left margin */
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+    }
+
+    .news-1-image-container {
+        width: 900px;
+        margin-left: 140px;
+    }
+
+    .news-1-image a {
+        width: 800px;
+    }
+
+    .news-items-container {
+        margin: 0;
+    }
+
+    .news-item {
+        gap: 10px; /* Reduce spacing between arrow and marquee */
+        padding: 0;
+    }
+
+    .arrow {
+        font-size: 14px; /* Smaller text size */
+        padding: 8px 16px;
+        margin-top: 16px;
+    }
+
+    .news-marquee {
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+
+    .last-update {
+        font-size: 12px;
+    }
+}
+
+/* Tablets (911px to 913px wide) */
+@media (min-width: 911px) and (max-width: 913px) {
+    .feature-section {
+        flex-direction: row; /* Stack elements horizontally */
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 10px;
+        margin-top: -20px;
+    }
+
+    .featured-article {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        margin-bottom: 0;
+    }
+
+    .more-section {
+        height: 80px;
+        margin-top: -10px;
+        flex-direction: row; /* Stack "More From JJN" section */
+        align-items: center;
+    }
+
+    .more-image-container {
+        width: 80px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .more-text {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .news-section {
+        flex-direction: column; /* Stack image and news items */
+        margin: 0; /* Remove left margin */
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+    }
+
+    .news-1-image-container {
+        width: 900px;
+        margin-left: 90px;
+    }
+
+    .news-1-image a {
+        width: 800px;
+    }
+
+    .news-items-container {
+        margin: 0;
+    }
+
+    .news-item {
+        gap: 10px; /* Reduce spacing between arrow and marquee */
+        padding: 0;
+    }
+
+    .arrow {
+        font-size: 14px; /* Smaller text size */
+        padding: 8px 16px;
+        margin-top: 16px;
+    }
+
+    .news-marquee {
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+
+    .last-update {
+        font-size: 12px;
+    }
+}

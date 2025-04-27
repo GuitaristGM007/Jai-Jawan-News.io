@@ -1,0 +1,1432 @@
+.header {
+    background-color: #a3cae9;
+    height: 130px;
+
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    z-index: 200;
+    flex-wrap: wrap;
+}
+
+.left-section {
+    display: flex; /* Make it a flex container */
+    justify-content: flex-start; /* Align children to the left */
+    align-items: center; /* Vertically center the logo and heading */
+    flex: 1;
+    max-width: 300px; /* Restrict the total width */
+    margin-left: 40px;
+}
+
+.header-logo-container {
+    width: 120px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.header-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+.header-logo:hover{
+    cursor: pointer;
+}
+
+.home-page-tooltip-container .home-page-tooltip {
+    background-color: #e9ecee;
+    color: #395a7f;
+    position: absolute;
+    border-radius: 3px; /* Rounds the edges */
+    font-size: 16px;
+    font-weight: 500;
+    padding: 2px; /* Combine padding values */
+    bottom: -20px;
+    left: 62px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    pointer-events: none;
+
+    border: 2px inset #395a7f; /* Adds border width and color */
+}
+
+.home-page-tooltip-container:hover .home-page-tooltip{
+    opacity: 1;
+}
+
+.heading-complete {
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Vertically center */
+    align-items: center; /* Horizontally center */
+    width: 300px; /* Restrict width */
+}
+
+.title {
+    color: #395a7f;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center; /* Center the text */
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide text overflow */
+    text-overflow: ellipsis; /* Add ellipsis if overflow occurs */
+}
+
+.subtitle {
+    color: #000000;
+    text-align: center; /* Center the text */
+}
+
+.middle-section {
+    display: flex; /* Make it a flex container */
+    justify-content: flex-start; /* Align children to the left */
+    align-items: center; /* Vertically center the logo and heading */
+    flex: 1;
+    max-width: 600px; /* Restrict the total width */
+    margin-left: 120px;
+}
+
+.home-section-container {
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Vertically center */
+    align-items: center; /* Horizontally center */
+    width: 300px; /* Restrict width */
+}
+
+.home-image-container {
+    width: 90px;
+    position: relative;
+}
+
+.home-image {
+    width: 75px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.home-image:hover {
+    transform: scale(1.2);
+}
+
+.news-section-container {
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Vertically center */
+    align-items: center; /* Horizontally center */
+    width: 300px; /* Restrict width */
+}
+
+.news-image-container {
+    width: 90px;
+    position: relative;
+}
+
+.news-image {
+    width: 75px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.news-image:hover {
+    transform: scale(1.2);
+}
+
+.right-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    max-width: 400px;
+    gap: 20px; /* Adds spacing between children */
+}
+
+.about-us {
+    margin-right: 10px; /* Optional, additional spacing */
+}
+
+.about-us, .write-to-us {
+    font-size: 20px;
+}
+
+.write-to-us {
+    margin-left: 40px; /* Adds spacing to the left */
+    margin-right: 20px; /* Keeps spacing to the right */
+}
+
+/* Mobile devices (up to 600px wide) */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-right: 0;
+        width: 50px;
+    }
+
+    .header-logo {
+        width: 50px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 150px; /* Restrict width */
+        margin-left: -12px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 16px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 9px;
+    }
+
+    .middle-section, .right-section {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 60px;
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 60px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 40px;
+    }
+
+    .home-image, .news-image {
+        width: 40px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 10px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 8.5px;
+    }
+    .about-us {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Mobile devices (350px to 400px) */
+@media (min-width: 374px) and (max-width: 376px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: -5px; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-right: 0;
+        width: 45px;
+    }
+
+    .header-logo {
+        width: 45px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 135px; /* Restrict width */
+        margin-left: -15px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 8px;
+    }
+
+    .middle-section, .right-section {
+        margin-left: -5px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 60px;
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 60px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 40px;
+    }
+
+    .home-image, .news-image {
+        width: 40px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 10px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 8.5px;
+    }
+    .about-us {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Mobile devices (359px to 361px) */
+@media (min-width: 359px) and (max-width: 361px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: -5px; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-right: 0;
+        width: 45px;
+    }
+
+    .header-logo {
+        width: 45px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 135px; /* Restrict width */
+        margin-left: -15px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 8px;
+    }
+
+    .middle-section {
+        margin-left: -18px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 60px;
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 60px;
+        margin-left: -5px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 40px;
+    }
+
+    .home-image, .news-image {
+        width: 40px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 10px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 8.5px;
+    }
+    .about-us {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Mobile devices (343px to 345px) */
+@media (min-width: 343px) and (max-width: 345px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: -5px; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-right: 0;
+        width: 40px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .header-logo {
+        width: 40px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 135px; /* Restrict width */
+        margin-left: -15px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 8px;
+    }
+
+    .middle-section {
+        margin-left: -15px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 60px;
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 60px;
+        margin-left: -10px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 34px;
+    }
+
+    .home-image, .news-image {
+        width: 34px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 10px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 7.5px;
+    }
+    .about-us {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Mobile devices (539px to 541px) */
+@media (min-width: 539px) and (max-width: 541px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-right: 0;
+        margin-top: 5px;
+        margin-bottom: 4px;
+        width: 60px;
+    }
+
+    .header-logo {
+        width: 60px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 165px; /* Restrict width */
+        margin-left: 0px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 20px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 11px;
+    }
+
+    .middle-section {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .right-section {
+        margin-left: 10px;
+    }
+
+    .home-section-container {
+        width: 60px;
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 60px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 40px;
+    }
+
+    .home-image, .news-image {
+        width: 40px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 10px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 14px;
+    }
+    .about-us {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (601px to 768px wide) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        width: 70px;
+    }
+
+    .header-logo {
+        width: 70px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 200px; /* Restrict width */
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 25px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .middle-section, .right-section {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 100px;
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 100px;
+        margin-left: 30px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 75px;
+    }
+
+    .home-image, .news-image {
+        width: 55px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 14px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 14px;
+    }
+    .about-us {
+        margin-left: 10px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (769px to 936px wide) */
+@media (min-width: 769px) and (max-width: 936px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        width: 70px;
+    }
+
+    .header-logo {
+        width: 70px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 200px; /* Restrict width */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 25px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .middle-section, .right-section {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 100px;
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 100px;
+        margin-left: 30px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 75px;
+    }
+
+    .home-image, .news-image {
+        width: 55px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 14px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 14px;
+    }
+    .about-us {
+        margin-left: 30px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (852px to 854px wide) */
+@media (min-width: 852px) and (max-width: 854px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        width: 75px;
+    }
+
+    .header-logo {
+        width: 75px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 220px; /* Restrict width */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 28px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .middle-section, .right-section {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 100px;
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 100px;
+        margin-left: 30px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 75px;
+    }
+
+    .home-image, .news-image {
+        width: 55px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 14px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 17px;
+    }
+    .about-us {
+        margin-left: 30px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (937px to 1104px wide) */
+@media (min-width: 937px) and (max-width: 1104px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        width: 80px;
+    }
+
+    .header-logo {
+        width: 80px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 300px; /* Restrict width */
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 35px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .middle-section, .right-section {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 100px;
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 100px;
+        margin-left: 30px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 75px;
+    }
+
+    .home-image, .news-image {
+        width: 55px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 14px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 20px;
+    }
+    .about-us {
+        margin-left: 30px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (911px to 913px wide) */
+@media (min-width: 911px) and (max-width: 913px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        width: 80px;
+    }
+
+    .header-logo {
+        width: 80px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 300px; /* Restrict width */
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 35px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .middle-section, .right-section {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 100px;
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 100px;
+        margin-left: 30px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 75px;
+    }
+
+    .home-image, .news-image {
+        width: 55px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 14px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 20px;
+    }
+    .about-us {
+        margin-left: 30px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (937px to 1104px wide) */
+@media (min-width: 1200px) and (max-width: 1249px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        width: 80px;
+    }
+
+    .header-logo {
+        width: 80px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 300px; /* Restrict width */
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 35px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .middle-section, .right-section {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 100px;
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 100px;
+        margin-left: 30px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 75px;
+    }
+
+    .home-image, .news-image {
+        width: 55px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 14px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 20px;
+    }
+    .about-us {
+        margin-left: 30px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (688px to 725px wide) */
+@media (min-width: 688px) and (max-width: 725px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        width: 75px;
+    }
+
+    .header-logo {
+        width: 75px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 300px; /* Restrict width */
+        margin-left: -40px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 30px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .middle-section{
+        margin-left: -60px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 90px;
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 90px;
+        margin-left: 0;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 75px;
+    }
+
+    .home-image, .news-image {
+        width: 55px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 14px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 20px;
+    }
+    .about-us {
+        margin-left: 30px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (688px to 725px wide) */
+@media (min-width: 600px) and (max-width: 688px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        width: 17vw;
+    }
+
+    .header-logo {
+        width: 65px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 30vw; /* Restrict width */
+        margin-left: -40px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 28px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .middle-section{
+        margin-left: -60px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 90px;
+        margin-left: 30px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 90px;
+        margin-left: 0;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 75px;
+    }
+
+    .home-image, .news-image {
+        width: 55px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 14px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 20px;
+    }
+    .about-us {
+        margin-left: 30px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (369px to 411px wide) */
+@media (min-width: 369px) and (max-width: 411px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-top: 0px;
+        margin-bottom: 8px;
+        margin-right: 10px;
+        width: 45px;
+    }
+
+    .header-logo {
+        width: 45px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 120px; /* Restrict width */
+        margin-left: -20px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 8px;
+    }
+
+    .middle-section{
+        margin-left: -60px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 70px;
+        margin-left: 50px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 70px;
+        margin-left: -10px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 40px;
+    }
+
+    .home-image, .news-image {
+        width: 40px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 8px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 8px;
+    }
+    .about-us {
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: -10px;
+        margin-right: 10px;
+    }
+}
+
+/* Tablets (369px to 411px wide) */
+@media (min-width: 299px) and (max-width: 370px) {
+    .header {
+        flex-direction: row; /* Stack the header sections */
+        height: auto; /* Adjust height dynamically */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-section, .middle-section, .right-section {
+        max-width: 100%; /* Make sections occupy the full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center-align the content */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .header-logo-container {
+        margin-bottom: 8px;
+        margin-right: 10px;
+        margin-left: 5px;
+        width: 30px;
+    }
+
+    .header-logo {
+        width: 30px; /* Adjust logo size */
+    }
+
+    .heading-complete {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Vertically center */
+        align-items: center; /* Horizontally center */
+        width: 100px; /* Restrict width */
+        margin-left: -25px;
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 10px; /* Reduce font size */
+    }
+
+    .subtitle {
+        font-size: 6px;
+    }
+
+    .middle-section{
+        margin-left: -60px;
+        margin-right: 0;
+    }
+
+    .home-section-container {
+        width: 60px;
+        margin-left: 50px;
+        margin-right: 0;
+    }
+
+    .news-section-container {
+        width: 60px;
+        margin-left: -30px;
+    }
+
+    .home-image-container, .news-image-container {
+        width: 18px;
+    }
+
+    .home-image, .news-image {
+        width: 18px; /* Adjust image sizes for smaller screens */
+    }
+    .home-text, .news-text {
+        font-size: 6px;
+    }
+
+    .about-us, .write-to-us {
+        font-size: 6px;
+    }
+    .about-us {
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+    .write-to-us {
+        margin-left: -10px;
+        margin-right: 10px;
+    }
+}

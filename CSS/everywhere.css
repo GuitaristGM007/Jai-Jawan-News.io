@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding-top: 150px;
+    background-color: #e9ecee;
+    font-family: Bahnschrift;
+}
+
+/* Mobile devices (up to 600px wide) */
+@media (max-width: 600px) {
+    body {
+        padding-top: 100px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Scale text for readability */
+    }
+}
+
+/* Tablets (601px to 768px wide) */
+@media (min-width: 601px) and (max-width: 768px) {
+    body {
+        padding-top: 120px; /* Moderate padding for tablets */
+        font-size: 16px; /* Adjust text size slightly */
+    }
+}
